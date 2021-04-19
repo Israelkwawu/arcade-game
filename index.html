@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><i class="fa fa-gamepad" aria-hidden="true"></i></title>
+    <style>
+
+        form{
+            display: block;
+            width: 70%;
+            padding: 15px;
+            margin: 50px auto;
+            box-sizing: border-box;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: 0;
+        }
+
+        input[type=submit]{
+            background-color: chocolate;
+            color: white;
+            border: 1px solid chocolate;
+        }
+
+
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <form >
+            <h1>Set Winning Score</h1>
+            <input type="number" min="1" id="winningScore">
+            <input type="submit" value="Set Winning Score">
+        </form>
+    </main>
+    <script>
+        let form = document.querySelector('form');
+        let input =  document.querySelector("#winningScore");
+        form.addEventListener('submit',function (e) {
+            e.preventDefault();
+            
+            localStorage.setItem("WINNING_SCORE", input.value ) ;
+            window.location.assign('game.html');
+        });
+    </script>
+</body>
+</html>
